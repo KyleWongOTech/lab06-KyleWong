@@ -14,17 +14,28 @@ def main():
         choice = input("Choice: ").strip()
 
         if choice == "1":
+            userinput: float = float(input("Amount: ").strip())
+            balance += userinput
+
+            print(f"New balance: {balance:.2f}")
+
             # TODO: ask "Amount: ", read it as a float, add it to balance, then print
             #   "New balance: <balance>" with the balance shown to 2 decimal places.
-            pass
         elif choice == "2":
             # TODO: ask "Amount: " and read it as a float. If it is MORE than balance,
             #   print "Insufficient funds". Otherwise subtract it from balance and
             #   print "New balance: <balance>" (2 decimal places).
-            pass
+            userinput: float = float(input("Amount: ").strip())
+            if(userinput<balance):
+                balance-=userinput
+                print(f"New balance: {balance:.2f}")
+            else:
+                print("Insufficient funds")
+
         elif choice == "3":
             # TODO: print "Current balance: <balance>" (2 decimal places).
-            pass
+            print(f"Current balance: {balance:.2f}")
+
         elif choice == "4":
             print("Goodbye")
             break
